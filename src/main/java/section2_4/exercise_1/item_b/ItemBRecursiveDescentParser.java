@@ -18,7 +18,6 @@ import section2_4.utils.SyntaxException;
 public class ItemBRecursiveDescentParser extends RecursiveDescentParser {
     public void parse(String input) {
         super.parse(input, this::S);
-        checkLookAheadAfterParsing();
     }
 
     public void S() {

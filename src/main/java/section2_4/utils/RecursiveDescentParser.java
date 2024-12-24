@@ -13,6 +13,7 @@ public class RecursiveDescentParser {
         updateLookAhead(0);
 
         startSymbol.run();
+        checkLookAheadAfterParsing();
     }
 
     protected boolean hasNonParsedSymbols() {
