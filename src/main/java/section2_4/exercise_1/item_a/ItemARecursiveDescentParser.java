@@ -8,11 +8,11 @@ import section2_4.utils.SyntaxException;
     Grammar parsed: S -> +SS | -SS | a
 */
 public class ItemARecursiveDescentParser extends RecursiveDescentParser {
-    public void parse(String input) {
+    public void parse(String input) throws SyntaxException  {
         super.parse(input, this::S);
     }
 
-    public void S() {
+    public void S() throws SyntaxException {
         switch (lookAhead) {
             case '+':
                 match('+');

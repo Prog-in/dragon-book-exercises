@@ -5,7 +5,7 @@ public class RecursiveDescentParser {
     protected Character lookAhead;
     protected int lookAheadIndex;
 
-    protected void parse(String input, Runnable startSymbol) {
+    protected void parse(String input, ParserRule startSymbol) throws SyntaxException {
         if (input.isEmpty()) {
             throw new SyntaxException();
         }
@@ -33,13 +33,13 @@ public class RecursiveDescentParser {
         updateLookAhead(lookAheadIndex + 1);
     }
 
-    protected void checkLookAheadAfterParsing() {
+    protected void checkLookAheadAfterParsing() throws SyntaxException {
         if (hasNonParsedSymbols()) {
             throw new SyntaxException();
         }
     }
 
-    protected void match(char token) {
+    protected void match(char token) throws SyntaxException {
         if (lookAhead != token) {
             throw new SyntaxException();
         }

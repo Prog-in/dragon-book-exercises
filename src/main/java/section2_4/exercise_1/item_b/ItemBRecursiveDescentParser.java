@@ -16,11 +16,11 @@ import section2_4.utils.SyntaxException;
     S -> (S)SS | E
 */
 public class ItemBRecursiveDescentParser extends RecursiveDescentParser {
-    public void parse(String input) {
+    public void parse(String input) throws SyntaxException {
         super.parse(input, this::S);
     }
 
-    public void S() {
+    public void S() throws SyntaxException {
         switch (lookAhead) {
             case '(':
                 match('(');
