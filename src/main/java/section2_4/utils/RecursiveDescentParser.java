@@ -24,7 +24,7 @@ public class RecursiveDescentParser {
         if (hasNonParsedSymbols()) {
             lookAhead = input.charAt(lookAheadIndex);
         } else {
-            lookAhead = 0; // dummy char that doesn't belongs to the terminal charset of the grammar
+            lookAhead = 0; // dummy char that doesn't belong to the terminal charset of the grammar
         }
     }
 
